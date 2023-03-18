@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
+  "name": "deckbuilder",
   "version": "0.1.0",
-  "homepage": "https://Dav3ster.github.io/The-Real-Deal",
+  "homepage": "https://Dav3ster.github.io/Deck-Builder",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",

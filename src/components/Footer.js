@@ -2,19 +2,23 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import image from '../images/mtgHeader.png'
 
 const styles = {
     footer: {
         display: 'flex',
-        background: 'linear-gradient(45deg,green,silver,dodgerblue)',
+        // background: 'linear-gradient(45deg,green,silver,dodgerblue)',
         padding: '10px',
         height: '200px',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        border: 'solid 7.5px grey',
+        backgroundImage: "url(" + image + ")",
+        backgroundSize: 'contain',
     },
     linkTitle:{
-        color: 'black',
+        color: 'grey',
         textShadow: '1px 2px 3px blue',
         fontFamily: 'palatino',
     },

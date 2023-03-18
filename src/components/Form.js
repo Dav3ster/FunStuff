@@ -72,7 +72,7 @@ function Form() {
     <Container fluid style={styles.container}>
      <Row style={styles.RowStyles}>
         <Col m={4} style={styles.col}>
-        <img src={require('../images/MePhoto1.jpg')} className='img-fluid' alt='MePhoto1' style={styles.photo}/>
+        {/* <img src={require('../images/MePhoto1.jpg')} className='img-fluid' alt='MePhoto1' style={styles.photo}/> */}
         </Col>
 
         <Col m={4}>
@@ -89,7 +89,7 @@ function Form() {
         </Col>
 
         <Col m={4} style={styles.col}>
-        <img src={require('../images/MePhoto2.jpg')} className='img-fluid' alt='MePhoto1' style={styles.photo}/>
+        {/* <img src={require('../images/MePhoto2.jpg')} className='img-fluid' alt='MePhoto1' style={styles.photo}/> */}
         </Col>
      </Row>
     </Container>

@@ -3,12 +3,13 @@ import { Link } from "react-router-dom"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Nav';
 import Col from 'react-bootstrap/Navbar';
+import image from '../images/mtgHeader.png'
 
 const styles = {
   name: {
-   fontSize: '85px',
+   fontSize: '95px',
    fontFamily: 'palatino',
-   color: 'black',
+   color: 'grey',
    textShadow: '2px 2px 3px white',
    display: 'flex',
    justifyContent:'center'
@@ -17,8 +18,11 @@ const styles = {
   navbar: {
     display: 'flex',
     justifyContent: 'space-around',
-    background: 'linear-gradient(45deg,silver,green,dodgerblue)',
-    border: 'solid 7.5px black ',
+    backgroundImage: "url(" + image + ")",
+    backgroundSize: 'contain',
+    // background: 'linear-gradient(45deg,red,silver,black,green,blue)',
+    border: 'solid 7.5px grey',
+    width: 'auto'
   },
   container: {
     width: '100%',
@@ -58,14 +62,15 @@ function HomeBar() {
      <Container fluid style={styles.container}>
        <Row bg="dark" style={styles.navbar}>
           <Col md={6} style={styles.colstyles}>
-            <h1 style={styles.name}><center><strong>David Stewart</strong></center></h1>
+            <h1 style={styles.name}><center><strong>Magic Builds</strong></center></h1>
           </Col>
           <Col md={6} style={styles.colstyles}>
            <nav style={styles.tabs} className='nav'> 
             <ul style={styles.ul}>
              <li><Link to={"/"} style={styles.tabItems}>Home</Link></li>
-             <li><Link to={"/Applications"} style={styles.tabItems}>Applications</Link></li>
-             <li><Link to={"/Contact"} style={styles.tabItems}>Contact</Link></li>
+             <li><Link to={"/Sign-in"} style={styles.tabItems}>Sign-in
+             </Link></li>
+             <li><Link to={"/Deck-Builder"} style={styles.tabItems}>Deck Builder</Link></li>
             </ul>
            </nav>
           </Col>
