@@ -1,98 +1,108 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import emailjs from '@emailjs/browser';
+import {
+  MDBContainer,
+  MDBInput,
+  MDBCheckbox,
+  MDBBtn,
+  MDBIcon
+}
+from 'mdb-react-ui-kit';
 
 const styles = {
-    container: {
-        background: 'linear-gradient(20deg,dodgerblue,green,silver)',
-        borderBottom: 'solid 7.5px black'
-      },
-    photo: {
-        display: 'flex',
-        borderRadius: 30,
-        border:'solid 7.5px black',
-        width: 'auto',
-        maxHeight: '500px',
-        minHeight: '500px',
-        minWidth: '250px',
-        margin: '10px'    
-      },
-      RowStyles:{
-        display: 'flex',
-        justifyContent: 'space-evenly'
-      },
-      form:{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: '25px',
-      },
-      h2styles:{
-        color: 'black',
-        textShadow: '1px 2px 3px lightblue',
-        fontFamily: 'palatino',
-    },
-    col:{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    textArea:{
-      width: '300px',
-      height: '225px',
-      borderRadius: '5px'
-    },
-    Radius:{
-      borderRadius: '5px'
-    }
+  container:{
+    background: 'linear-gradient(20deg,black,white)',
+  }
+
 }
 
 function Form() {
-    const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm('service_opnzx9f', 'template_oxofy9h', form.current, 'ks3DeBkWe5WKC1m72')
-      .then((result) => {
-          console.log(result.text);
-          e.target.reset();
-      }, (error) => {
-          console.log(error.text);
-      });
-
-      alert('Email sent successfully!')
-  };
-
-    return (
+  return (
     <Container fluid style={styles.container}>
-     <Row style={styles.RowStyles}>
-        <Col m={4} style={styles.col}>
-        {/* <img src={require('../images/MePhoto1.jpg')} className='img-fluid' alt='MePhoto1' style={styles.photo}/> */}
-        </Col>
+      <Row>
+        <Col md={12}>
+          <MDBContainer
+            className="p-5 d-flex flex-column"
+          >
+            <MDBInput
+              wrapperClass="mb-4"
+              label="Email address"
+              id="form1"
+              type="email"
+            />
+            <MDBInput
+              wrapperClass="mb-4"
+              label="Password"
+              id="form2"
+              type="password"
+            />
 
-        <Col m={4}>
-        <form ref={form} onSubmit={sendEmail} style={styles.form}>
-          <h2 style={styles.h2styles}><strong>Feel free to reach out!</strong></h2>  
-          <label>-Name-</label>
-          <input type="text" name="user_name" style={styles.Radius} /><br></br>
-          <label>-Email-</label>
-          <input type="email" name="user_email" style={styles.Radius} /><br></br>
-          <label>-Message-</label>
-          <textarea style={styles.textArea} name="message" />
-          <input type="submit" value="Send" className='mt-2'/>
-        </form>
-        </Col>
+            <div className="d-flex justify-content-between mx-3 mb-4">
+              <MDBCheckbox
+                name="flexCheck"
+                value=""
+                id="flexCheckDefault"
+                label="Remember me"
+              />
+              <a href="!#">Forgot password?</a>
+            </div>
 
-        <Col m={4} style={styles.col}>
-        {/* <img src={require('../images/MePhoto2.jpg')} className='img-fluid' alt='MePhoto1' style={styles.photo}/> */}
+            <MDBBtn className="mb-4">Sign in</MDBBtn>
+
+            <div className="text-center">
+              <p>
+                Not a member? <a href="#!">Register</a>
+              </p>
+              <p>or sign up with:</p>
+
+              <div
+                className="d-flex justify-content-between mx-auto"
+                style={{ width: "40%" }}
+              >
+                <MDBBtn
+                  tag="a"
+                  color="none"
+                  className="m-1"
+                  style={{ color: "#1266f1" }}
+                >
+                  <MDBIcon fab icon="facebook-f" size="sm" />
+                </MDBBtn>
+
+                <MDBBtn
+                  tag="a"
+                  color="none"
+                  className="m-1"
+                  style={{ color: "#1266f1" }}
+                >
+                  <MDBIcon fab icon="twitter" size="sm" />
+                </MDBBtn>
+
+                <MDBBtn
+                  tag="a"
+                  color="none"
+                  className="m-1"
+                  style={{ color: "#1266f1" }}
+                >
+                  <MDBIcon fab icon="google" size="sm" />
+                </MDBBtn>
+
+                <MDBBtn
+                  tag="a"
+                  color="none"
+                  className="m-1"
+                  style={{ color: "#1266f1" }}
+                >
+                  <MDBIcon fab icon="github" size="sm" />
+                </MDBBtn>
+              </div>
+            </div>
+          </MDBContainer>
         </Col>
-     </Row>
+      </Row>
     </Container>
-)}
+  );
+}
 
 export default Form;

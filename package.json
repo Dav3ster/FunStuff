@@ -17,6 +17,7 @@
     "express": "^4.18.2",
     "file-saver": "^2.0.5",
     "jest": "^27.5.1",
+    "mdb-react-ui-kit": "^5.1.0",
     "nodemailer": "^6.9.1",
     "normalize.css": "^8.0.1",
     "pretty": "^2.0.0",
