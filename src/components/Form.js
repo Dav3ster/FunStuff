@@ -55,8 +55,7 @@ function Form() {
               <p>
                 Not a member? <a href="#!">Register</a>
               </p>
-              <p>or sign up with:</p>
-
+              
               <div
                 className="d-flex justify-content-between mx-auto"
                 style={{ width: "40%" }}
