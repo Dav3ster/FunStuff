@@ -51,10 +51,10 @@ function Form() {
 
             <MDBBtn className="mb-4">Sign in</MDBBtn>
 
-            <div className="text-center">
+            {/* <div className="text-center">
               <p>
                 Not a member? <a href="#!">Register</a>
-              </p>
+              </p> */}
               
               <div
                 className="d-flex justify-content-between mx-auto"
@@ -96,7 +96,7 @@ function Form() {
                   <MDBIcon fab icon="github" size="sm" />
                 </MDBBtn>
               </div>
-            </div>
+            {/* </div> */}
           </MDBContainer>
         </Col>
       </Row>
